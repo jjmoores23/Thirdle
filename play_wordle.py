@@ -1,0 +1,43 @@
+from wordle import Wordle
+from letter_state import LetterState
+from colorama import Fore, Style
+import random
+from game_over import GameOver
+
+def main():
+    print("Hello Wordle!")
+    while True:
+        word_size = str(input("Enter the word size for this game (3, 4, or 5): "))
+        if word_size not in ['3', '4', '5']:
+            print("Please enter a valid word size (3, 4, or 5).")
+        else:
+            word_set = load_word_set("data/wordle_words_" + word_size + ".txt")
+            break
+    secret = random.choice(list(word_set))
+    game = Wordle(secret, int(word_size))
+    win_check = GameOver()
+
+    while game.can_attempt:
+        x = input("Enter your guess: ")
+        game.attempt(x)
+        result = game.guess(x)
+        if result != "0":
+            game.display_results(game)    
+    if game.is_solved:
+        print("You've solved the word!")
+        print(win_check.result(True))
+    else:
+        print("You've run out of attempts. The word was:", game.secret)
+        print(win_check.result(False))
+
+def load_word_set(path: str):
+    word_set = set()
+    with open(path, "r") as f:
+        for line in f.readlines():
+            word = line.strip().upper()
+            word_set.add(word)
+    return word_set
+    
+if __name__ == "__main__":
+    main()
+#At some point, add the feature to choose a 3, 4, or 5 letter game
