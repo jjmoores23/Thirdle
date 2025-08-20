@@ -9,7 +9,7 @@ Navigate your terminal to access the download location of the games files
 
 Once inside of the file, run
 
-    python play_wordle.py
+    python play_thirdle.py
 
 # **How To Play**
 First, select the length of word you would like to solve for (3/4/5)
@@ -26,7 +26,7 @@ The user has six attempts to guess the word. It's made clear when a win/ loss co
 
 When the game is over, the code will stop running, and to play again. the user simply needs to run
 
-    python play_wordle.py
+    python play_thirdle.py
 
 # **NOTES**
 
