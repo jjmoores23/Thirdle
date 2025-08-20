@@ -6,7 +6,7 @@ Thirdle is ran inside of your computers terminal via Python.
 
 If python is not downloaded on your computer, it can be downloaded here:
 
-    https://www.python.org/downloads/macos/
+    https://www.python.org/downloads/
 
 To have colours present in the game, the following must be ran in terminal:
 
