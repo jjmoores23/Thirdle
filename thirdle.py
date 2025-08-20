@@ -3,7 +3,7 @@ from colorama import Fore, Style
 from typing import List
 
 
-class Wordle:
+class Thirdle:
 
     WORD_LENGTH = 4  #Default word length
     MAX_ATTEMPTS = 6
@@ -84,4 +84,5 @@ class Wordle:
 
     @property
     def can_attempt(self):
+
         return self.remaining_attempts > 0 and not self.is_solved
