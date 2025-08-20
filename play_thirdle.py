@@ -1,4 +1,4 @@
-from wordle import Wordle
+from thirdle import Thirdle
 from letter_state import LetterState
 from colorama import Fore, Style
 import random
@@ -14,7 +14,7 @@ def main():
             word_set = load_word_set("data/wordle_words_" + word_size + ".txt")
             break
     secret = random.choice(list(word_set))
-    game = Wordle(secret, int(word_size))
+    game = Thirdle(secret, int(word_size))
     win_check = GameOver()
 
     while game.can_attempt:
@@ -41,4 +41,5 @@ def load_word_set(path: str):
 if __name__ == "__main__":
     main()
 #At some point, add the feature to choose a 3, 4, or 5 letter game
+
 
