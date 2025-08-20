@@ -4,6 +4,10 @@ Terminal-based version of the popular game "Wordle", with options to solve a puz
 # **How To Run**
 Thirdle is ran inside of your computers terminal via Python.
 
+If python is not downloaded on your computer, it can be donwloaded here:
+
+    https://www.python.org/downloads/macos/
+
 To have colours present in the game, the following must be ran in terminal:
 
     pip install colorama
