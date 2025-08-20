@@ -5,7 +5,7 @@ import random
 from game_over import GameOver
 
 def main():
-    print("Hello Wordle!")
+    print("Hello Thirdle!")
     while True:
         word_size = str(input("Enter the word size for this game (3, 4, or 5): "))
         if word_size not in ['3', '4', '5']:
@@ -41,3 +41,4 @@ def load_word_set(path: str):
 if __name__ == "__main__":
     main()
 #At some point, add the feature to choose a 3, 4, or 5 letter game
+
