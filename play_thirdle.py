@@ -17,14 +17,28 @@ def main():
     game = Thirdle(secret, int(word_size))
     win_check = GameOver()
 
+    print("\nIf a character is not in the word, the character will remain WHITE")
+    print("\nIf a character is in the word but in the wrong location, \nit will become " + Fore.MAGENTA +
+          "MAGENTA" + Style.RESET_ALL)
+    print("\nIf a character is in the word AND is in the correct location, \nit will become "
+          + Fore.GREEN + "GREEN" + Style.RESET_ALL)
+    print("\nIf a hint has been used, the two effected guess-lines will \nbecome "
+          + Fore.YELLOW + "YELLOW\n" + Style.RESET_ALL)
+    
     while game.can_attempt:
-        x = input("Enter your guess: ")
-        game.attempt(x)
-        result = game.guess(x)
-        if result != "0":
-            game.display_results(game)    
+        x = input("Enter your guess, or enter 'H' for a hint: ")
+        if x.upper() == "H":
+            y = input("This will use two of your guesses, are you sure you want help? (Y/N): ")
+            if y.upper() == "Y":
+                game.hint()
+        else:
+            game.attempt(x)
+            result = game.guess(x)
+            if result != "0":
+                game.display_results(game)   
+                game.display_remaining_letters(x) 
     if game.is_solved:
-        print("You've solved the word!")
+        print("You've won Thirdle!")
         print(win_check.result(True))
     else:
         print("You've run out of attempts. The word was:", game.secret)
@@ -40,6 +54,3 @@ def load_word_set(path: str):
     
 if __name__ == "__main__":
     main()
-#At some point, add the feature to choose a 3, 4, or 5 letter game
-
-
