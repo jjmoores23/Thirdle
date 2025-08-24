@@ -43,6 +43,11 @@ def main():
     else:
         print("You've run out of attempts. The word was:", game.secret)
         print(win_check.result(False))
+    again = input("\n.\n\n.\n\n.\n...Care for another round of Thirdle? (Y/N): ")
+    if again.upper() == 'Y':
+        main()
+    else:
+        print("Until next time...")
 
 def load_word_set(path: str):
     word_set = set()
