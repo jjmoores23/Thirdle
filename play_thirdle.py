@@ -5,7 +5,9 @@ import random
 from game_over import GameOver
 
 def main():
-    print("Hello Thirdle!")
+    print("Hello Thirdle!\n")
+    start = GameOver()
+    print(start.welcome_screen())
     while True:
         word_size = str(input("Enter the word size for this game (3, 4, or 5): "))
         if word_size not in ['3', '4', '5']:
