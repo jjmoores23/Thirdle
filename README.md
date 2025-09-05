@@ -42,8 +42,6 @@ The user has six attempts to guess the word. It's made clear when a win/ loss co
 
 When the game is over, the code will stop running, and to play again. the user simply needs to run the game again.
 
-# **NOTES**
-
-This game was made in a day for fun, and as a refresher of python skills, a very simple piece of coding.
+...
 
 I hope you enjoy!
